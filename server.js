@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
+
 
 //mongoose stuff
 mongoose.connect('mongodb://localhost/teams', {useNewUrlParser: true, useUnifiedTopology: true } )
@@ -25,4 +27,4 @@ app.use('/teams', require('./routes/teams'));
 app.use('/players', require('./routes/players'));
 
 
-app.listen(3000)
+app.listen(3001)

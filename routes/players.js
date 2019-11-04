@@ -10,6 +10,7 @@ router.get('/', (req,res) => {
 
 router.post('/', (req,res) => {
     const newPlayer = Player(req.body)
+    console.log(req)
     newPlayer.save((err, player) => {
         res.json(player)
     })
